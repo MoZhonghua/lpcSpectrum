@@ -109,11 +109,11 @@ int main(int argc,char **argv){
 		frame[j]=(double)snd->monaural16[frameShift*frameNumber+j];
 	}
 
-	//ƒvƒŠƒGƒ“ƒtƒ@ƒVƒXƒtƒBƒ‹ƒ^‚ğ‚©‚¯‚é
+	//ãƒ—ãƒªã‚¨ãƒ³ãƒ•ã‚¡ã‚·ã‚¹ãƒ•ã‚£ãƒ«ã‚¿ã‚’ã‹ã‘ã‚‹
 	double b[2]={1.0,-0.99};
 	frame=fir(frame,j,b,2);
 
-	//ƒnƒ~ƒ“ƒO‘‹
+	//ãƒãƒŸãƒ³ã‚°çª“
 	window(frame,j);
 
 
@@ -129,7 +129,7 @@ int main(int argc,char **argv){
 	double *p=freqz(tmp,a,1,lpcOrder+1,FREQ_NUM);
 		
 	for(j=0;j<FREQ_NUM/2;j++){
-		p[j]=20*log(p[j]); //‘Î”ƒXƒyƒNƒgƒ‹‚É•ÏŠ·
+		p[j]=20*log(p[j]); //å¯¾æ•°ã‚¹ãƒšã‚¯ãƒˆãƒ«ã«å¤‰æ›
 		
 		printf("%.5lf\t%.5lf\n", 2.0 * M_PI * j / FREQ_NUM,p[j]);
 	}

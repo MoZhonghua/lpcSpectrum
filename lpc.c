@@ -31,11 +31,11 @@ double* vectorVectorAdd(double* x,int num,double* y){
 }
 
 
-//autocorr ©ŒÈ‘ŠŠÖŠÖ”
-// x:ƒf[ƒ^”z—ñ
-// len:”z—ñ‚Ì—v‘f”
-// lagSize:Å‘å‚Ìƒ‰ƒO(1`lagSize‚Ü‚Å‚Ì‘ŠŠÖ‚ğ‹‚ß‚é)
-// –ß‚è’lF©ŒÈ‘ŠŠÖŠÖ”
+//autocorr è‡ªå·±ç›¸é–¢é–¢æ•°
+// x:ãƒ‡ãƒ¼ã‚¿é…åˆ—
+// len:é…åˆ—ã®è¦ç´ æ•°
+// lagSize:æœ€å¤§ã®ãƒ©ã‚°(1ï½lagSizeã¾ã§ã®ç›¸é–¢ã‚’æ±‚ã‚ã‚‹)
+// æˆ»ã‚Šå€¤ï¼šè‡ªå·±ç›¸é–¢é–¢æ•°
 double *autocorr(const double *x,const int len,const int lagSize){
 	double *r;
 	int lag,j;
@@ -51,11 +51,11 @@ double *autocorr(const double *x,const int len,const int lagSize){
 }
 
 
-// LevinsonDurbin ARƒ‚ƒfƒ‹‚ğ\’z
-// r:©ŒÈ‘ŠŠÖŠÖ”
-// A:‹‚ß‚ç‚ê‚½ARŒW”(–ß‚è’l)
-// lpcOrder:Ÿ”
-// –ß‚è’lFƒmƒCƒY
+// LevinsonDurbin ARãƒ¢ãƒ‡ãƒ«ã‚’æ§‹ç¯‰
+// r:è‡ªå·±ç›¸é–¢é–¢æ•°
+// A:æ±‚ã‚ã‚‰ã‚ŒãŸARä¿‚æ•°(æˆ»ã‚Šå€¤)
+// lpcOrder:æ¬¡æ•°
+// æˆ»ã‚Šå€¤ï¼šãƒã‚¤ã‚º
 double LevinsonDurbin(const double *r,double **A,const int lpcOrder){
 	double *Ak;
 
@@ -102,12 +102,12 @@ double LevinsonDurbin(const double *r,double **A,const int lpcOrder){
 	return Ek;
 }
 
-//freqz FIRƒtƒBƒ‹ƒ^‚Ìü”g”‰“š‚ğ‹‚ß‚é
-// b a :ƒtƒBƒ‹ƒ^ŒW”
-// nB: b”z—ñ‚Ì—v‘f”
-// nA: a”z—ñ‚Ì—v‘f”
-// N: ü”g”‚Ì•ªŠ„”i‘å‚«‚¢’l‚Ù‚Ç×‚©‚­’²‚×‚éj
-// –ß‚è’lFü”g”‰“šŠÖ”
+//freqz FIRãƒ•ã‚£ãƒ«ã‚¿ã®å‘¨æ³¢æ•°å¿œç­”ã‚’æ±‚ã‚ã‚‹
+// b a :ãƒ•ã‚£ãƒ«ã‚¿ä¿‚æ•°
+// nB: bé…åˆ—ã®è¦ç´ æ•°
+// nA: aé…åˆ—ã®è¦ç´ æ•°
+// N: å‘¨æ³¢æ•°ã®åˆ†å‰²æ•°ï¼ˆå¤§ãã„å€¤ã»ã©ç´°ã‹ãèª¿ã¹ã‚‹ï¼‰
+// æˆ»ã‚Šå€¤ï¼šå‘¨æ³¢æ•°å¿œç­”é–¢æ•°
 double *freqz(const double *b,const double *a,const int nB,const int nA,const int N){
 	double *ret;
 	dmalloc(ret,sizeof(double)*(N+1));
